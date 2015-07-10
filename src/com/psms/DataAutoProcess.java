@@ -234,7 +234,11 @@ class DataAutoProcess
 					coor.addNoe(address,data);
 					break;
 				case PARKING:
-					coor.cmdSetParking(address, data);
+//					coor.cmdSetParking(address, data);
+					boolean status=false;
+					if(data==1)
+						status=true;
+					window.pf.setStatus(address, status);
 					break;
 				case BATTERY:
 					coor.cmdSetBattery(address, data);

@@ -38,7 +38,7 @@ class UartProcess
 		@SuppressWarnings("unchecked")
 		Enumeration<CommPortIdentifier> en = CommPortIdentifier.getPortIdentifiers();
 	    while (en.hasMoreElements()) {
-	        portId = (CommPortIdentifier) en.nextElement();
+	        portId = en.nextElement();
 	        if (portId.getPortType() == CommPortIdentifier.PORT_SERIAL) {
 	            mymodel.addElement(portId.getName());
 	        }

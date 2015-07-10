@@ -1,35 +1,29 @@
 package com.psms;
-import javax.swing.JFrame;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
 import java.awt.BorderLayout;
 import java.awt.Component;
-import javax.swing.JTabbedPane;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BoxLayout;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import java.awt.GridLayout;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.Font;
-import javax.swing.JButton;
-import java.awt.Dimension;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.SwingConstants;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JToolBar;
-import java.awt.FlowLayout;
-import javax.swing.ImageIcon;
 import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Canvas;
-import javax.swing.border.LineBorder;
 import java.awt.Color;
-import javax.swing.border.EmptyBorder;
+import java.awt.Canvas;
 
 
 public class main_gui {
@@ -48,6 +42,8 @@ public class main_gui {
 	JTextArea textArea_nodeInfo;
 	JTabbedPane tabbedPane;
 	JLabel Label_isonline;
+	ParkingFactory pf=new ParkingFactory();
+
 	/**
 	 * Launch the application.
 	 */
@@ -142,7 +138,7 @@ public class main_gui {
 			
 			JPanel panel_parkingSts = new JPanel();
 			tabbedPane.addTab("车位信息", null, panel_parkingSts, null);
-			panel_parkingSts.setLayout(new BorderLayout(0, 0));
+			panel_parkingSts.setLayout(new GridLayout(4, 4, 0, 0));
 			
 			JPanel panel_netInfo = new JPanel();
 			tabbedPane.addTab("\u7F51\u7EDC\u4FE1\u606F", null, panel_netInfo, null);
@@ -284,6 +280,8 @@ public class main_gui {
 				Label_isonline.setIcon(new ImageIcon(main_gui.class.getResource("/image/offline.png")));
 				Label_isonline.setIconTextGap(20);
 				panel_1.add(Label_isonline);
+				pf.createParkingPanel(16);
+				pf.addToUI(panel_parkingSts);
 	}
 
 }
