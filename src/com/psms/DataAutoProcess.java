@@ -239,6 +239,7 @@ class DataAutoProcess
 					if(data==1)
 						status=true;
 					window.pf.setStatus(address, status);
+//					System.out.println(status);
 					break;
 				case BATTERY:
 					coor.cmdSetBattery(address, data);

@@ -112,6 +112,7 @@ public class main_gui {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("\u8F66\u4F4D\u7BA1\u7406\u7CFB\u7EDF\u2014\u2014\u676D\u5DDE\u7535\u5B50\u79D1\u6280\u5927\u5B66\uFF08\u78C1\u7535\u5B50\u4E2D\u5FC3\uFF09");
 		frame.setBounds(100, 100, 1100, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
