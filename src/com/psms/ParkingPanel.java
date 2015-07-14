@@ -9,6 +9,8 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import sun.reflect.ReflectionFactory.GetReflectionFactoryAction;
 /**
  * 
  * 
@@ -122,8 +124,9 @@ class InnerCanvas extends Canvas
 	{
 		super();
 		setVisible(true);
-		online_image=this.getToolkit().getImage("image/online.png");
-		offline_image=this.getToolkit().getImage("image/offline.png");
+		online_image=this.getToolkit().getImage( this.getClass().getResource("/image/on.png"));
+		offline_image=this.getToolkit().getImage( this.getClass().getResource("/image/off.png"));
+		
 	}
 
 	@Override
@@ -138,7 +141,7 @@ class InnerCanvas extends Canvas
 		}
 		else
 		{
-			image=this.getToolkit().getImage("image/disconnected.png");
+			image=this.getToolkit().getImage( this.getClass().getResource("/image/disconnected.png"));
 		}
 		g.drawImage(image, getWidth()/2-64,getHeight()/2-48,this);
 		
