@@ -97,11 +97,11 @@ public ParkingPanel()
 		return canvas.isConnected();
 	}
 	public void setConnected(boolean isConnected) {
-		canvas.setConnected(isConnected);
 		if(isConnected)
 			label.setText("设备已连接");
 		else
 			label.setText("设备未连接");
+		canvas.setConnected(isConnected);
 	}
 
 }
@@ -162,7 +162,11 @@ class InnerCanvas extends Canvas
 	}
 
 	public void setIsOnline(Boolean isOnline) {
-		this.isOnline = isOnline;
+		if(this.isOnline!=isOnline)
+		{
+			this.isOnline = isOnline;
+			repaint();
+		}
 	}
 
 
@@ -172,6 +176,10 @@ class InnerCanvas extends Canvas
 	}
 
 	public void setConnected(boolean isConnected) {
+		if(this.isConnected!=isConnected)
+		{
 		this.isConnected = isConnected;
+		repaint();
+		}
 	}
 }

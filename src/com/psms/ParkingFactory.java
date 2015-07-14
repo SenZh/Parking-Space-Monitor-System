@@ -60,18 +60,14 @@ public void setStatus(int devId,boolean status)
 			if(pp.getDevId()==devId)
 			{
 				pp.setOnline(status);
-//				pp.repaint();
-				pp.refreshCanvas();
 				return;
 			}
 		}
 		else
 		{
-			pp.setConnected(true);
-			pp.setOnline(status);
+			pp.setConnected(true);	
 			pp.setDevId(devId);
-//			pp.repaint();
-			pp.refreshCanvas();;
+			pp.setOnline(status);
 			return;
 		}
 	}

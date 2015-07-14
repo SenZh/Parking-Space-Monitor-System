@@ -21,9 +21,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
-import java.awt.GridBagLayout;
-import java.awt.Color;
-import java.awt.Canvas;
 
 
 public class main_gui {
@@ -146,7 +143,7 @@ public class main_gui {
 			panel_netInfo.setLayout(new BorderLayout(0, 0));
 			
 			JScrollPane scrollPane_2 = new JScrollPane();
-			panel_netInfo.add(scrollPane_2, BorderLayout.WEST);
+			panel_netInfo.add(scrollPane_2, BorderLayout.CENTER);
 			
 			textArea_nodeInfo = new JTextArea();
 			textArea_nodeInfo.setEditable(false);

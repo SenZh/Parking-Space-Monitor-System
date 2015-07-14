@@ -21,7 +21,14 @@ class HandShaking implements Runnable
 	public void run() {
 		
 		while(run){
-			
+			byte[] workingMode={77,1};
+			uart.Write(workingMode);
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e1) {
+				// TODO 自动生成的 catch 块
+				e1.printStackTrace();
+			}
 			if(isonline)  //判断是否在线
 			{
 				win.Label_isonline.setIcon(new ImageIcon(main_gui.class.getResource("/image/online.png")));
@@ -32,11 +39,12 @@ class HandShaking implements Runnable
 			
 			}
 		byte[] cmd={90,100};
-		uart.Write(cmd);
+		uart.Write(cmd); //向协调器发送在线指令
 		isonline=false;
 		try {
 			Thread.sleep(5000);  //线程休眠5s
-		} catch (InterruptedException e) {
+		}
+		catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		}

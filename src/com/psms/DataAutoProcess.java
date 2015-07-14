@@ -193,7 +193,7 @@ class DataAutoProcess
 			byte flag=indata[3];
 			boolean incorrect=false;
 			byte parity=0;
-			String str=new String(indata, 4, 5);
+//			String str=new String(indata, 4, 5);
 			for(int i=4;i<14;i++)  //判断10位数据是否全部为0-9的字符
 			{
 				if(indata[i]<48||indata[i]>57)
